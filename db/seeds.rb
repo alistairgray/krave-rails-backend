@@ -10,9 +10,9 @@ puts "created #{User.count} users"
 puts 'Creating new menus'
 Menu.destroy_all
 
-m1 = Menu.create! image: 'http://placekitten.com/200/200', dishname: 'spaghetti', dishdescription: 'its good'
-m2 = Menu.create! image: 'http://placekitten.com/200/200', dishname: 'margherita', dishdescription: 'its really good'
-m3 = Menu.create! image: 'http://placekitten.com/200/200', dishname: 'beef_pho', dishdescription: 'its incredible, seriously'
+m1 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'spaghetti', item_description: 'its good'
+m2 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'margherita', item_description: 'its really good'
+m3 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'beef_pho', item_description: 'its incredible, seriously'
 
 puts "created #{Menu.count} menus"
 

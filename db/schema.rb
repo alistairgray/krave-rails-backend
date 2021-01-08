@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2021_01_08_065445) do
 
   create_table "menus", force: :cascade do |t|
     t.text "image"
-    t.text "dishname"
-    t.text "dishdescription"
+    t.text "menu_item"
+    t.text "item_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
