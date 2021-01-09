@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 
   def search
     search = params[:search].downcase
-    results = Restaurant.all.where("lower(name) LIKE :search", search: search)
+    results = Restaurant.all.where("lower(name) LIKE :search OR lower(cuisine) LIKE :search", search: search)
 
     render json: results
   end
