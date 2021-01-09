@@ -1,0 +1,20 @@
+# Check if user_id is required
+
+<%= form_with model:@restaurants, local:true do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
+    
+    <%= f.label :menu_id %>
+    <%= f.text_field :menu_id %>  
+    
+    
+    <%= f.submit %>
+    <%end %>
+    
