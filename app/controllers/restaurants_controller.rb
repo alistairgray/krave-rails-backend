@@ -7,9 +7,14 @@ class RestaurantsController < ApplicationController
 
   def create
     # headers['Access-Control-Allow-Origin'] = '*'
-    restaurant = Restaurant.create params[:name]
+    restaurant = Restaurant.create(
+      name: params[:resName],
+      address: params[:resAddress],
+      cuisine: params[:resCuisine]
+    )
     render json: restaurant
   end
+
   def new
   end
 
@@ -37,4 +42,15 @@ class RestaurantsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def restaurant_params
+    params.require(:restaurant).permit(
+      :name,
+      :address,
+      :cuisine
+    )
+  end
+
 end
