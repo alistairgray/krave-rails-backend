@@ -8,13 +8,13 @@ class RestaurantsController < ApplicationController
   def create
     # headers['Access-Control-Allow-Origin'] = '*'
     restaurant = Restaurant.create(
-      name: params[:resName],
-      address: params[:resAddress],
-      cuisine: params[:resCuisine]
+      name: params[:name],
+      address: params[:address],
+      cuisine: params[:cuisine]
     )
     render json: restaurant
   end
-  
+
   def new
   end
 
