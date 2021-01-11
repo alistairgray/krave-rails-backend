@@ -7,20 +7,23 @@ u3 = User.create! name: 'andy', email: 'andy@ga.co', password: 'chicken', author
 
 puts "created #{User.count} users"
 
-puts 'Creating new menus'
-Menu.destroy_all
-
-m1 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'spaghetti', item_description: 'its good'
-m2 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'margherita', item_description: 'its really good'
-m3 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'beef_pho', item_description: 'its incredible, seriously'
-
-puts "created #{Menu.count} menus"
-
 puts 'Creating new restaurants'
 Restaurant.destroy_all
 
-r1 = Restaurant.create! name: 'Tiamo', address: '1 lygon st', cuisine: 'italian', menu_id: m1.id, user_id: u1.id
-r2 = Restaurant.create! name: 'Gigis', address: '50 king st', cuisine: 'italian', menu_id: m2.id, user_id: u2.id
-r3 = Restaurant.create! name: 'Pho Phd', address: '1 merickville st', cuisine: 'vietnamese', menu_id: m3.id, user_id: u3.id
+r1 = Restaurant.create! name: 'Tiamo', address: '1 lygon st', cuisine: 'italian', user_id: u1.id
+r2 = Restaurant.create! name: 'Gigis', address: '50 king st', cuisine: 'italian', user_id: u2.id
+r3 = Restaurant.create! name: 'Pho Phd', address: '1 merickville st', cuisine: 'vietnamese', user_id: u3.id
 
 puts "created #{Restaurant.count} restaurants"
+
+puts 'Creating new menus'
+Menu.destroy_all
+
+m1 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'spaghetti', item_description: 'its good', restaurant_id: r1.id
+m2 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'margherita', item_description: 'its really good', restaurant_id: r2.id
+m3 = Menu.create! image: 'http://placekitten.com/200/200', menu_item: 'beef_pho', item_description: 'its incredible, seriously', restaurant_id: r3.id
+m4 = Menu.create! image: 'http://placekitten.com/100/100', menu_item: 'pasta', item_description: 'amazing!', restaurant_id: r1.id
+m5 = Menu.create! image: 'http://placekitten.com/250/250', menu_item: 'aranchinni', item_description: 'so good!', restaurant_id: r1.id
+
+
+puts "created #{Menu.count} menus"

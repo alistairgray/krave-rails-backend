@@ -4,7 +4,6 @@ class CreateRestaurants < ActiveRecord::Migration[5.2]
       t.text :name
       t.text :address
       t.string :cuisine
-      t.integer :menu_id
       t.integer :user_id
 
       t.timestamps

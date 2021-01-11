@@ -15,7 +15,12 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    
+    current_restaurant = Restaurant.find params[:id]
+    restaurant_data = {
+      restaurant: current_restaurant,
+      menuItems: current_restaurant.menus
+    }
+    render json: restaurant_data
   end
 
   def search

@@ -15,17 +15,11 @@ ActiveRecord::Schema.define(version: 2021_01_08_065445) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favourites", force: :cascade do |t|
-    t.integer "restaurant_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "menus", force: :cascade do |t|
     t.text "image"
     t.text "menu_item"
     t.text "item_description"
+    t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_01_08_065445) do
     t.text "name"
     t.text "address"
     t.string "cuisine"
-    t.integer "menu_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
