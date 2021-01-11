@@ -2,26 +2,14 @@ class RestaurantsController < ApplicationController
   def index
   end
 
-  def new
-  end
-
   def create
-    # headers['Access-Control-Allow-Origin'] = '*'
     restaurant = Restaurant.create(
       name: params[:name],
       address: params[:address],
       cuisine: params[:cuisine]
     )
+    p restaurant.errors
     render json: restaurant
-  end
-
-  def new
-  end
-
-  def create
-  end
-
-  def index
   end
 
   def show
@@ -34,14 +22,6 @@ class RestaurantsController < ApplicationController
     render json: results
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 
   private
 
