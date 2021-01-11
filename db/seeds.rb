@@ -1,9 +1,9 @@
 puts 'Creating new users'
 User.destroy_all
 
-u1 = User.create! name: 'bruna', email: 'bruna@ga.co', password_digest: 'chicken', authorisation: 0
-u2 = User.create! name: 'sam', email: 'sam@ga.co', password_digest: 'chicken', authorisation: 1
-u3 = User.create! name: 'andy', email: 'andy@ga.co', password_digest: 'chicken', authorisation: 1
+u1 = User.create! name: 'bruna', email: 'bruna@ga.co', password: 'chicken', authorisation: 0
+u2 = User.create! name: 'sam', email: 'sam@ga.co', password: 'chicken', authorisation: 1
+u3 = User.create! name: 'andy', email: 'andy@ga.co', password: 'chicken', authorisation: 1
 
 puts "created #{User.count} users"
 
