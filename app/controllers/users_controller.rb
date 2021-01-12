@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       else
        render json: @user.errors, status: :unprocessable_entity
       end
-    p @user.errors
   end
 
 private
