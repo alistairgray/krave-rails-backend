@@ -1,6 +1,9 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user
 
+  def address
+  end
+
   def index
   end
 

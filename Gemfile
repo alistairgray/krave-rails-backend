@@ -63,3 +63,5 @@ gem 'rack-cors'
 gem 'knock'
 
 gem 'cloudinary'
+
+gem 'geocoder'
