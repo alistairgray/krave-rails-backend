@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   #
+  get '/control' => 'users#control_panel'
   get 'users/new'
   get 'users/create'
   post 'user_token' => 'user_token#create'

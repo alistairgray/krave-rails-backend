@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_235022) do
     t.text "image"
   end
 
-  create_table "restaurants_users", force: :cascade do |t|
+  create_table "restaurants_users", id: false, force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
