@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_01_13_044450) do
     t.float "longitude"
   end
 
-  create_table "restaurants_users", force: :cascade do |t|
+  create_table "restaurants_users", id: false, force: :cascade do |t|
     t.integer "restaurant_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
