@@ -10,10 +10,10 @@ puts "created #{User.count} users"
 puts 'Creating new restaurants'
 Restaurant.destroy_all
 
-r1 = Restaurant.create! name: 'Tiamo', address: '1 lygon st', cuisine: 'italian'
-r2 = Restaurant.create! name: 'Gigis', address: '50 king st', cuisine: 'italian'
-r3 = Restaurant.create! name: 'Pho Phd', address: '1 merickville st', cuisine: 'vietnamese'
-r4 = Restaurant.create! name: 'Soul Burger', address: '229A King St, Newtown, NSW, 2042', cuisine: 'American'
+r1 = Restaurant.create! name: 'Tiamo', address: '303 Lygon St, Carlton VIC 3053', cuisine: 'italian', user_id: u1.id
+r2 = Restaurant.create! name: 'Gigis', address: '379 King St, Newtown NSW 2042', cuisine: 'italian', user_id: u2.id
+r3 = Restaurant.create! name: 'Pho Phd', address: '260 Marrickville Rd, Marrickville NSW 2204', cuisine: 'vietnamese', user_id: u3.id
+r4 = Restaurant.create! name: 'Soul Burger', address: '229A King St, Newtown, NSW, 2042', cuisine: 'American', user_id: u2.id
 
 u1.restaurants << r1
 u2.restaurants << r2 << r4
