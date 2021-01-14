@@ -10,14 +10,14 @@ puts "Created #{User.count} users"
 puts 'Creating new restaurants'
 Restaurant.destroy_all
 
-r1 = Restaurant.create! name: 'Tiamo', address: '303 Lygon St, Carlton VIC 3053', cuisine: 'Italian', user_id: u1.id
-r2 = Restaurant.create! name: 'Gigis', address: '379 King St, Newtown NSW 2042', cuisine: 'Italian', user_id: u2.id
-r3 = Restaurant.create! name: 'Pho Phd', address: '260 Marrickville Rd, Marrickville NSW 2204', cuisine: 'Vietnamese', user_id: u3.id
-r4 = Restaurant.create! name: 'Soul Burger', address: '229A King St, Newtown, NSW, 2042', cuisine: 'American', user_id: u2.id
-r5 = Restaurant.create! name: 'Bodhi', address: '2-4 College Street, Sydney, NSW, 2000', cuisine: 'Vegan', user_id: u2.id
+r1 = Restaurant.create! name: 'Tiamo', address: '303 Lygon St, Carlton VIC 3053', cuisine: 'Italian'
+r2 = Restaurant.create! name: 'Gigis', address: '379 King St, Newtown NSW 2042', cuisine: 'Italian'
+r3 = Restaurant.create! name: 'Pho Phd', address: '260 Marrickville Rd, Marrickville NSW 2204', cuisine: 'Vietnamese'
+r4 = Restaurant.create! name: 'Soul Burger', address: '229A King St, Newtown, NSW, 2042', cuisine: 'American'
+r5 = Restaurant.create! name: 'Bodhi', address: '2-4 College Street, Sydney, NSW, 2000', cuisine: 'Vegan'
 
 u1.restaurants << r1
-u2.restaurants << r2 << r4
+u2.restaurants << r2 << r4 <<r5
 u3.restaurants << r3
 
 puts "Created #{Restaurant.count} restaurants"
