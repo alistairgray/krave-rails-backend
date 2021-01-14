@@ -4,6 +4,15 @@ class RestaurantsController < ApplicationController
   def address
   end
 
+  def location_search
+    restaurants = Restaurant.near([
+      params[:lat],
+      params[:lng]
+  ], 50)
+
+    render json: restaurants
+  end
+
   def index
   end
 
