@@ -12,13 +12,12 @@ class UsersController < ApplicationController
   end
 
   def control_panel
-    user_data = {
-      id: current_user.id,
-      name: current_user.name,
-      authorisation: current_user.authorisation,
-      email: current_user.email,
-      restaurants: current_user.restaurants
-    }
+    # Return menus nested in restaurants nested in user
+    user_data = current_user.as_json(
+      include: {restaurants: {
+        include: :menus
+      }}
+    )
 
     render json: user_data
   end
