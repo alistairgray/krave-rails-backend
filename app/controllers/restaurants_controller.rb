@@ -17,13 +17,8 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    restaurant = Restaurant.create(
-      name: params[:name],
-      address: params[:address],
-      cuisine: params[:cuisine]
-    )
-    p restaurant.errors
-    render json: restaurant
+    restaurant = Restaurant.create! restaurant_params
+    User.find(params[:user_id]).restaurants << restaurant
   end
 
   def show
@@ -42,6 +37,17 @@ class RestaurantsController < ApplicationController
     render json: results
   end
 
+  def update
+    restaurant = Restaurant.find params[:id]
+    restaurant.update restaurant_params
+
+    render json: restaurant
+  end
+
+  def destroy
+    Restaurant.destroy params[:id]
+  end
+
 
   private
 
@@ -49,7 +55,10 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(
       :name,
       :address,
-      :cuisine
+      :cuisine,
+      :description,
+      :image,
+      :user_id
     )
   end
 
